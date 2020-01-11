@@ -1,0 +1,378 @@
+html
+{
+    box-sizing: border-box; /*Parte de snippet (1)*/
+    font-size: 62.5%; /* Reset para REMs - 62.5% de 16px = 10px*/
+}
+
+*, *:before, *:after
+{
+    box-sizing: inherit;/*2da parte del snippet que hace que no importa cuánto padding tenga un elemento, no se sumará al ancho, sino que será parte de este*/
+}
+
+/** Globales **/
+img
+{
+    max-width: 100%; /*Esto permite que todas las imágenes sean responsive*/
+}
+
+.contenedor
+{
+    max-width: 120rem;
+    margin: 0 auto; /*Es igual que margin-left: auto y margin-right: auto*/
+}
+
+h1
+{
+    font-size: 4rem;
+}
+
+h2
+{
+    font-size: 3.5rem;
+}
+
+h3
+{
+    font-size: 3rem;
+}
+
+h4
+{
+    font-size: 2.5rem;
+}
+
+/* Utilidades */
+.seccion
+{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.fw-300
+{
+    font-weight: 300;
+}
+
+.centrar-texto
+{
+    text-align: center;
+}
+
+.d-block
+{
+    display: block!important;
+}
+
+/* Botones */
+.boton 
+{
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+    margin-top: 3rem;
+    display: inline-block; /*los enlaces, por defecto, tienen display:inline, no se les puede aplicar ancho*/
+    text-align: center;
+}
+
+.boton-amarillo
+{
+    background-color: #e08709;
+}
+
+.boton-verde
+{
+    background-color: #71b100;
+}
+
+
+/*Body*/
+body
+{
+    font-family: 'Lato', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+
+/* Header */
+.site-header
+{
+    background-color: #333333;
+    padding: 1rem 0 3rem 0;
+}
+
+.site-header.inicio
+{
+    background-image: url(../img/header.jpg);
+    background-position: center center;
+    background-size: cover;
+    height: 100vh; /*siendo n el porcentaje de la resolución del viewport a ocupar*/
+    min-height: 60rem;
+}
+
+.contenido-header
+{
+    height: 100%;
+    display: flex; /*Flexbox sólo afecta al primer nivel de hijos*/
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contenido-header h1
+{
+    color: white;
+    padding-bottom: 2rem;
+    max-width: 60rem;
+    line-height: 2; /*Interlineado*/
+}
+
+.barra
+{
+    display: flex;
+    justify-content: space-between; /*Distribuye elementos horizontalmente*/
+    align-items: center; /*Distribuye elementos verticalmente*/
+    padding-top: 3rem;
+}
+
+
+
+/* Navegacion */
+.navegacion a
+{
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    margin-right: 2rem;
+}
+
+.navegacion a:hover
+{
+    color: #71b100;
+}
+
+.navegacion a:last-of-type
+{
+    margin-right: 0;
+}
+
+
+/*Iconos nosotros*/
+.iconos-nosotros
+{
+    display: flex;
+}
+
+.icono
+{
+    flex-basis: calc(33.3% - 1rem); /* Con HMTL y CSS es width, pero con flexbox se debe usar flex-basis*/
+    justify-content: space-between;
+    text-align: center;
+}
+
+.icono p
+{
+    padding: 2rem;
+}
+
+.icono h3
+{
+    text-transform: uppercase;
+}
+
+/* Anuncios */
+.contenedor-anuncios
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.anuncio
+{
+    flex-basis: calc(33.3% - 1rem);
+    border: 1px solid #b5b5b5; /*border toma tres propiedades en el siguiente orden: width, style y color*/
+    background-color: #f5f5f5;
+}
+
+.contenido-anuncio
+{
+    padding: 2rem;
+}
+
+.contenido-anuncio h3, 
+.contenido-anuncio p
+{
+    margin: 0; /*Los headings y el interlineado de párrafo tienen un margin predefinido. Con esto lo eliminamos*/
+}
+
+.precio
+{
+    color: #71b100;
+    font-weight: 700;
+}
+
+.iconos-caracteristicas
+{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.iconos-caracteristicas li
+{
+    display: flex;
+}
+
+.iconos-caracteristicas li img
+{ 
+    margin-right: 1rem;
+}
+
+.ver-todas
+{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.imagen-contacto
+{
+    background-image: url(../img/encuentra.jpg);
+    background-position: center center;
+    background-size: cover;
+    height: 40rem;
+    display: flex;
+    align-items: center;
+}
+
+.contenido-contacto
+{
+    flex: 1; /*Factor de crecimiento. Detecta el tamaño disponible y lo divide por n, siendo n la cantidad de elementos en el contenedor*/
+    color: white;
+}
+
+.contenido-contacto p
+{
+    font-size: 1.8rem;
+}
+
+/*Seccion Inferior*/
+.seccion-inferior
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.seccion-inferior .blog
+{
+    flex-basis: 60%;
+}
+
+.seccion-inferior .testimoniales
+{
+    flex-basis:  calc(40% - 2rem);
+}
+
+.entrada-blog
+{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.entrada-blog:last-of-type
+{
+    margin-bottom: 0;
+}
+
+.entrada-blog .imagen
+{
+    flex-basis: 40%;
+}
+
+.entrada-blog .texto-entrada
+{
+    flex-basis: calc(60% - 3rem);
+}
+
+.texto-entrada a
+{
+    color: black;
+    text-decoration: none;
+}
+
+.texto-entrada h4
+{
+    margin: 0;
+    line-height: 1.2;
+}
+
+.texto-entrada h4::after /*Pseudoelemento al final del bloque*/
+{
+    content: '';
+    display: block;
+    width: 15rem;
+    height: .5rem;
+    background-color: #71b100;
+    margin-top: 1rem;
+}
+
+.texto-entrada span
+{
+    color: #e08709;
+}
+
+/* Testimoniales */
+
+.testimonial
+{
+    background-color: #71b100;
+    font-size: 2.4rem;
+    padding: 2rem;
+    color: white;
+    border-radius: 2rem; /*Determina qué tan redondeadas serán las esquinas*/
+}
+
+.testimonial p
+{
+    text-align: right;
+}
+
+.testimonial blockquote::before /*Pseudoelemento al principio del bloque*/
+{
+    content: ' ';
+    background-image: url(../img/comilla.svg);
+    width: 4rem;
+    height: 4rem;
+    display: block;
+    position: absolute; /*El elemento hijo debe tener una posición absoluta*/
+    left: -2rem;
+}
+
+.testimonial blockquote
+{
+    position: relative; /*El elemento padre debe tener una posición relativa, caso contrario el elemento hijo tomá como referencia la página completa para determinar su posición*/
+    padding-left: 5rem;
+    font-weight: 300;
+}
+
+/*Footer*/
+.site-footer
+{
+    background-color: #333333;
+    margin: 0;
+}
+
+.contenedor-footer
+{
+    padding: 3rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.copyright
+{
+    margin: 0;
+    color: white;
+}
